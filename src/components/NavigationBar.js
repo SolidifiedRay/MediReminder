@@ -11,7 +11,7 @@ export default function NavigationBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: '#DEDEDE' }} elevation={0}>
         <Toolbar>
-          <img src="/images/pill-logo.png" alt="pill-logo" width="4%" />
+          <img src="./images/pill-logo.png" alt="pill-logo" width="4%" />
           &nbsp;
           <Typography component="div" sx={{ flexGrow: 1 }}>
             <Typography
