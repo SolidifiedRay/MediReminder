@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/MediReminder/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/MediReminder/static/js/main.dc90476d.chunk.js",
-    "main.js.map": "/MediReminder/static/js/main.dc90476d.chunk.js.map",
+    "main.js": "/MediReminder/static/js/main.ef7e76f8.chunk.js",
+    "main.js.map": "/MediReminder/static/js/main.ef7e76f8.chunk.js.map",
     "runtime-main.js": "/MediReminder/static/js/runtime-main.3aa1cc8a.js",
     "runtime-main.js.map": "/MediReminder/static/js/runtime-main.3aa1cc8a.js.map",
     "static/js/2.84522253.chunk.js": "/MediReminder/static/js/2.84522253.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3aa1cc8a.js",
     "static/js/2.84522253.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.dc90476d.chunk.js"
+    "static/js/main.ef7e76f8.chunk.js"
   ]
 }
