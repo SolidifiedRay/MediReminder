@@ -16,13 +16,16 @@ function Home() {
           align="center"
         >
           Your
-          <Typography
-            display="inline"
-            variant="h2"
-            style={{ color: '#549CDF' }}
-          >
-            &nbsp;Health&nbsp;
-          </Typography>
+        </Typography>
+        <Typography display="inline" variant="h2" style={{ color: '#549CDF' }}>
+          &nbsp;Health&nbsp;
+        </Typography>
+        <Typography
+          display="inline"
+          variant="h2"
+          style={{ color: '#000000' }}
+          align="center"
+        >
           is important,
         </Typography>
       </Box>
@@ -35,13 +38,16 @@ function Home() {
           align="center"
         >
           make sure you
-          <Typography
-            display="inline"
-            variant="h2"
-            style={{ color: '#549CDF' }}
-          >
-            &nbsp;protect&nbsp;
-          </Typography>
+        </Typography>
+        <Typography display="inline" variant="h2" style={{ color: '#549CDF' }}>
+          &nbsp;protect&nbsp;
+        </Typography>
+        <Typography
+          display="inline"
+          variant="h2"
+          style={{ color: '#000000' }}
+          align="center"
+        >
           it.
         </Typography>
       </Box>

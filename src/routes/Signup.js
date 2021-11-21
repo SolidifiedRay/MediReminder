@@ -6,7 +6,6 @@ import InputBase from '@mui/material/InputBase';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
