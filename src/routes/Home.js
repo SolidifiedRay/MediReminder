@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 function Home() {
   return (
-    <div className="App">
+    <div>
       <br />
       <Box display="flex" alignItems="center" justifyContent="center">
         <Typography

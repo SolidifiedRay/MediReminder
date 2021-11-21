@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
+import Account from './routes/Account';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="login" element={<Login />} />
         <Route exact path="signup" element={<Signup />} />
+        <Route exact path="account" element={<Account />} />
       </Routes>
     </div>
   );

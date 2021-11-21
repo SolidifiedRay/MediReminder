@@ -47,7 +47,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 
 function Signup() {
   return (
-    <div className="App">
+    <div>
       <br />
       <Box display="flex" alignItems="center" justifyContent="center">
         <img src="./images/pill-white.png" alt="pill-logo" />
