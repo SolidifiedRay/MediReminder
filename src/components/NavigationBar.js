@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
+import { Link } from "react-router-dom";
 
 export default function NavigationBar() {
   return (
@@ -32,6 +33,8 @@ export default function NavigationBar() {
           <Button
             color="inherit"
             style={{ color: '#000000', textTransform: 'none' }}
+            component={Link}
+            to={"/Login"}
           >
             Sign In or Create account &nbsp;
             <PersonIcon style={{ width: 40, height: 40 }} />
