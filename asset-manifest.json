@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/MediReminder/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/MediReminder/static/js/main.5c497517.chunk.js",
-    "main.js.map": "/MediReminder/static/js/main.5c497517.chunk.js.map",
+    "main.js": "/MediReminder/static/js/main.ea1417b9.chunk.js",
+    "main.js.map": "/MediReminder/static/js/main.ea1417b9.chunk.js.map",
     "runtime-main.js": "/MediReminder/static/js/runtime-main.3aa1cc8a.js",
     "runtime-main.js.map": "/MediReminder/static/js/runtime-main.3aa1cc8a.js.map",
-    "static/js/2.739e5082.chunk.js": "/MediReminder/static/js/2.739e5082.chunk.js",
-    "static/js/2.739e5082.chunk.js.map": "/MediReminder/static/js/2.739e5082.chunk.js.map",
+    "static/js/2.753ad07c.chunk.js": "/MediReminder/static/js/2.753ad07c.chunk.js",
+    "static/js/2.753ad07c.chunk.js.map": "/MediReminder/static/js/2.753ad07c.chunk.js.map",
     "index.html": "/MediReminder/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/MediReminder/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.739e5082.chunk.js.LICENSE.txt": "/MediReminder/static/js/2.739e5082.chunk.js.LICENSE.txt"
+    "static/js/2.753ad07c.chunk.js.LICENSE.txt": "/MediReminder/static/js/2.753ad07c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3aa1cc8a.js",
-    "static/js/2.739e5082.chunk.js",
+    "static/js/2.753ad07c.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.5c497517.chunk.js"
+    "static/js/main.ea1417b9.chunk.js"
   ]
 }
