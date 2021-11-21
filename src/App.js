@@ -4,6 +4,7 @@ import Home from './routes/Home';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Account from './routes/Account';
+import Connections from './routes/Connections';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="login" element={<Login />} />
         <Route exact path="signup" element={<Signup />} />
         <Route exact path="account" element={<Account />} />
+        <Route exact path="connections" element={<Connections />} />
       </Routes>
     </div>
   );
