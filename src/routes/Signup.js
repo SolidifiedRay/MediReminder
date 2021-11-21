@@ -7,7 +7,6 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import { Link } from 'react-router-dom';
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -46,7 +45,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Login() {
+function Signup() {
   return (
     <div className="App">
       <br />
@@ -62,11 +61,11 @@ function Login() {
       </Box>
       <br />
       <Box display="flex" alignItems="center" justifyContent="center">
-        <Card variant="outlined" style={{ height: '450px', width: '600px' }}>
+        <Card variant="outlined" style={{ height: '500px', width: '600px' }}>
           <br />
           <Box display="flex" alignItems="center" justifyContent="center">
             <Typography variant="h4" style={{ color: '#000000' }}>
-              Sign in
+              Sign up
             </Typography>
           </Box>
           <br />
@@ -74,42 +73,44 @@ function Login() {
             <FormControl variant="standard">
               <InputLabel shrink>
                 <Typography variant="h6" style={{ color: '#000000' }}>
-                  Email or username
+                  Enter email
                 </Typography>
               </InputLabel>
               <BootstrapInput id="email" />
             </FormControl>
           </Box>
-          <Box
-            display="flex"
-            alignItems="right"
-            justifyContent="right"
-            style={{ width: '95%' }}
-          >
-            <Typography variant="h8" style={{ color: '#549CDF' }}>
-              Forgot email or username?
-            </Typography>
+          <br />
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <FormControl variant="standard">
+              <InputLabel shrink>
+                <Typography variant="h6" style={{ color: '#000000' }}>
+                  Enter username
+                </Typography>
+              </InputLabel>
+              <BootstrapInput id="email" />
+            </FormControl>
           </Box>
           <br />
           <Box display="flex" alignItems="center" justifyContent="center">
             <FormControl variant="standard">
               <InputLabel shrink>
                 <Typography variant="h6" style={{ color: '#000000' }}>
-                  Password
+                  Enter Password
                 </Typography>
               </InputLabel>
-              <BootstrapInput id="password" />
+              <BootstrapInput id="email" />
             </FormControl>
           </Box>
-          <Box
-            display="flex"
-            alignItems="right"
-            justifyContent="right"
-            style={{ width: '95%' }}
-          >
-            <Typography variant="h8" style={{ color: '#549CDF' }}>
-              Forgot password
-            </Typography>
+          <br />
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <FormControl variant="standard">
+              <InputLabel shrink>
+                <Typography variant="h6" style={{ color: '#000000' }}>
+                  Re-enter Password
+                </Typography>
+              </InputLabel>
+              <BootstrapInput id="email" />
+            </FormControl>
           </Box>
           <br />
           <Box display="flex" alignItems="center" justifyContent="center">
@@ -118,45 +119,23 @@ function Login() {
               style={{
                 backgroundColor: '#549CDF',
                 textTransform: 'none',
-                width: '100px',
-                height: '30px',
-                borderRadius: '25px',
-              }}
-              disableElevation
-            >
-              <Typography variant="h7">Sign in</Typography>
-            </Button>
-          </Box>
-          <br />
-          <Divider variant="middle">
-            <Typography variant="h8" style={{ color: '#8C8B8B' }}>
-              New to MediReminder?
-            </Typography>
-          </Divider>
-          <br />
-          <Box display="flex" alignItems="center" justifyContent="center">
-            <Button
-              variant="contained"
-              style={{
-                backgroundColor: '#DEDEDE',
-                textTransform: 'none',
                 width: '150px',
                 height: '30px',
                 borderRadius: '25px',
               }}
               disableElevation
-              component={Link}
-              to={'/Signup'}
             >
-              <Typography variant="h8" style={{ color: '#549CDF' }}>
+              <Typography variant="h8" style={{ color: '#DEDEDE' }}>
                 Create account
               </Typography>
             </Button>
           </Box>
         </Card>
       </Box>
+      <br />
+      <br />
     </div>
   );
 }
 
-export default Login;
+export default Signup;
