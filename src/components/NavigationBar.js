@@ -5,9 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PersonIcon from '@mui/icons-material/Person';
+import Group from '@mui/icons-material/Group';
+import DateRange from '@mui/icons-material/DateRange';
 import { Link } from 'react-router-dom';
+import { Stack } from '@mui/material';
 
-export default function NavigationBar() {
+export default function NavigationBar({ username }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: '#DEDEDE' }} elevation={0}>
@@ -30,15 +33,47 @@ export default function NavigationBar() {
               Reminder
             </Typography>
           </Typography>
-          <Button
-            color="inherit"
-            style={{ color: '#000000', textTransform: 'none' }}
-            component={Link}
-            to={'/Login'}
-          >
-            Sign In or Create account &nbsp;
-            <PersonIcon style={{ width: 40, height: 40 }} />
-          </Button>
+          {username === '' ? (
+            <Button
+              color="inherit"
+              style={{ color: '#000000', textTransform: 'none' }}
+              component={Link}
+              to={'/Login'}
+            >
+              <Typography variant="h6">
+                Sign In or Create account &nbsp;
+              </Typography>
+              <PersonIcon style={{ width: 50, height: 50 }} />
+            </Button>
+          ) : (
+            <Stack direction="row" spacing={2}>
+              <Button
+                color="inherit"
+                style={{ color: '#000000', textTransform: 'none' }}
+              >
+                <Typography variant="h6">Reminders&nbsp;</Typography>
+                <DateRange style={{ width: 50, height: 50 }} />
+              </Button>
+              <Button
+                color="inherit"
+                style={{ color: '#000000', textTransform: 'none' }}
+                component={Link}
+                to={'/Connections'}
+              >
+                <Typography variant="h6">Connections&nbsp;</Typography>
+                <Group style={{ width: 50, height: 50 }} />
+              </Button>
+              <Button
+                color="inherit"
+                style={{ color: '#000000', textTransform: 'none' }}
+                component={Link}
+                to={'/Account'}
+              >
+                <Typography variant="h6">{username}</Typography>
+                <PersonIcon style={{ width: 50, height: 50 }} />
+              </Button>
+            </Stack>
+          )}
         </Toolbar>
       </AppBar>
     </Box>

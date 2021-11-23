@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
@@ -46,7 +47,16 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Login() {
+function Login({ LoginFunc }) {
+  const [details, setDetails] = useState({ email: '', password: '' });
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    LoginFunc(details);
+    console.log(details);
+  };
+
   return (
     <div>
       <br />
@@ -77,7 +87,13 @@ function Login() {
                   Email or username
                 </Typography>
               </InputLabel>
-              <BootstrapInput id="email" />
+              <BootstrapInput
+                id="email"
+                onChange={(e) =>
+                  setDetails({ ...details, email: e.target.value })
+                }
+                value={details.email}
+              />
             </FormControl>
           </Box>
           <Box
@@ -98,7 +114,13 @@ function Login() {
                   Password
                 </Typography>
               </InputLabel>
-              <BootstrapInput id="password" />
+              <BootstrapInput
+                id="password"
+                onChange={(e) =>
+                  setDetails({ ...details, password: e.target.value })
+                }
+                value={details.password}
+              />
             </FormControl>
           </Box>
           <Box
@@ -122,6 +144,7 @@ function Login() {
                 height: '30px',
                 borderRadius: '25px',
               }}
+              onClick={submitHandler}
               disableElevation
             >
               <Typography variant="h7">Sign in</Typography>

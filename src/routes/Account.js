@@ -65,7 +65,7 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
   border: `2px solid ${theme.palette.background.paper}`,
 }));
 
-function Account() {
+function Account({ LogoutFunc }) {
   const [openName, setOpenName] = React.useState(false);
   const handleClickOpenName = () => {
     setOpenName(true);
@@ -262,7 +262,7 @@ function Account() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} md={6}>
+          <Grid item xs={12} sm={4} md={4}>
             <Box display="flex" alignItems="center" justifyContent="center">
               <Button
                 variant="outlined"
@@ -297,7 +297,7 @@ function Account() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={4} md={6}>
+          <Grid item xs={12} sm={4} md={4}>
             <Box display="flex" alignItems="center" justifyContent="center">
               <Button
                 variant="outlined"
@@ -327,6 +327,34 @@ function Account() {
                     style={{ color: '#549CDF' }}
                   >
                     View Code
+                  </Typography>
+                </Stack>
+              </Button>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={4} md={4}>
+            <Box display="flex" alignItems="center" justifyContent="center">
+              <Button
+                variant="outlined"
+                style={{
+                  height: '100px',
+                  width: '400px',
+                  textTransform: 'none',
+                }}
+                onClick={LogoutFunc}
+                disableElevation
+              >
+                <Stack
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Typography
+                    display="inline"
+                    variant="h4"
+                    style={{ color: '#000000' }}
+                  >
+                    Logout
                   </Typography>
                 </Stack>
               </Button>
