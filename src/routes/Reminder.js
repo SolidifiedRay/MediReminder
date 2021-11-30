@@ -5,15 +5,15 @@ import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
 import { v4 as uuidv4 } from 'uuid';
 import Grid from '@mui/material/Grid';
 
-import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
+// import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import ConnectionList from './ConnectionList'
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
+import Modal from './Modal'
 
 const localizer = momentLocalizer(moment);
 const DnDCalendar = withDragAndDrop(Calendar);
-
 
 const BusinessHour = (props) => {
 
@@ -63,6 +63,7 @@ const BusinessHour = (props) => {
   }
 
   const handleSelect = ({start, end}) => {
+    // handleOpen(true)
     const title = window.prompt('Max Capacity')
     const capacity =  "Capcity:".concat(title)
     if(title) {
@@ -75,12 +76,17 @@ const BusinessHour = (props) => {
     }
   }
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return  <Grid container>
             <Grid item xs={2}>
+                <Modal open={open} setOpen={setOpen} />
                 <Grid container>
-                    <Grid xs={12} style={{"backgroundColor": "#549CDF", textAlign: "center", paddingTop: 30, paddingBottom: 30, margin: 10}}>
+                    <Grid xs={12} onClick={()=>{handleOpen()}} style={{"backgroundColor": "#549CDF", textAlign: "center", paddingTop: 30, paddingBottom: 30, margin: 10, cursor: "pointer"}}>
                         <AddIcon style={{background: "white", borderRadius: "50%", color: "#549CDF", fontSize: 50}}/>
-                        <div style={{color: "white", fontSize: 30, marginTop: 20}}>
+                        <div style={{color: "white", fontSize: 30, marginTop: 20}} >
                             Create Reminder
                         </div>
                     </Grid>
