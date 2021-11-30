@@ -51,6 +51,8 @@ export default function NavigationBar({ username }) {
             <Stack direction="row" spacing={2}>
               <Button
                 color="inherit"
+                component={Link}
+                to={'/reminder'}
                 style={{ color: '#000000', textTransform: 'none' }}
               >
                 <Typography variant="h6">Reminders&nbsp;</Typography>

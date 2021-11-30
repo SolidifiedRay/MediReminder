@@ -3,8 +3,13 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 
 function Home() {
+
+  let navigate = useNavigate();
+
+
   return (
     <div>
       <br />
@@ -97,6 +102,7 @@ function Home() {
             <Box display="flex" alignItems="center" justifyContent="center">
               <Button
                 variant="contained"
+                onClick={()=>{navigate("/reminder")}}
                 style={{
                   backgroundColor: '#549CDF',
                   textTransform: 'none',
@@ -106,7 +112,7 @@ function Home() {
                 }}
                 disableElevation
               >
-                <Typography variant="h6">Get Started</Typography>
+                 <Typography variant="h6">Get Started</Typography>
               </Button>
             </Box>
             <Divider orientation="vertical" flexItem />
@@ -148,6 +154,7 @@ function Home() {
                   height: '50px',
                   borderRadius: '25px',
                 }}
+                onClick={()=>{navigate("/connections")}}
                 disableElevation
               >
                 <Typography variant="h6">Get Started</Typography>
