@@ -5,6 +5,7 @@ import Home from './routes/Home';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Account from './routes/Account';
+import Reminder from './routes/Reminder'
 import Connections from './routes/Connections';
 
 function App() {
@@ -17,15 +18,8 @@ function App() {
   let navigate = useNavigate();
 
   const LoginFunc = (details) => {
-    if (
-      details.email === adminUser.email &&
-      details.password === adminUser.password
-    ) {
       setUser({ username: details.email, email: details.email });
       navigate('/account');
-    } else {
-      console.log('Faill');
-    }
   };
 
   const LogoutFunc = () => {
@@ -41,6 +35,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="login" element={<Login LoginFunc={LoginFunc} />} />
         <Route exact path="signup" element={<Signup />} />
+        <Route exact path="reminder" element={<Reminder />} />
         <Route
           exact
           path="account"

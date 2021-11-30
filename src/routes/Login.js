@@ -116,6 +116,7 @@ function Login({ LoginFunc }) {
               </InputLabel>
               <BootstrapInput
                 id="password"
+                type="password"
                 onChange={(e) =>
                   setDetails({ ...details, password: e.target.value })
                 }
