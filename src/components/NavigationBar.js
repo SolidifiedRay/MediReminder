@@ -18,6 +18,7 @@ export default function NavigationBar({ username }) {
           <img src="./images/pill-logo.png" alt="pill-logo" />
           &nbsp;
           <Typography component="div" sx={{ flexGrow: 1 }}>
+            <Link to='/' style={{textDecoration:"none"}}>
             <Typography
               display="inline"
               variant="h4"
@@ -32,6 +33,7 @@ export default function NavigationBar({ username }) {
             >
               Reminder
             </Typography>
+            </Link>
           </Typography>
           {username === '' ? (
             <Button

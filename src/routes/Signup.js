@@ -1,4 +1,5 @@
 import Typography from '@mui/material/Typography';
+import { useState } from 'react'
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import { alpha, styled } from '@mui/material/styles';
@@ -45,6 +46,16 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 
 function Signup() {
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [userName, setUsername] = useState("")
+
+  const register = async () => {
+    
+  }
+
   return (
     <div>
       <br />
@@ -97,7 +108,7 @@ function Signup() {
                   Enter Password
                 </Typography>
               </InputLabel>
-              <BootstrapInput id="email" />
+              <BootstrapInput id="email" type="password" />
             </FormControl>
           </Box>
           <br />
@@ -108,7 +119,7 @@ function Signup() {
                   Re-enter Password
                 </Typography>
               </InputLabel>
-              <BootstrapInput id="email" />
+              <BootstrapInput id="email" type="password" />
             </FormControl>
           </Box>
           <br />
@@ -124,7 +135,7 @@ function Signup() {
               }}
               disableElevation
             >
-              <Typography variant="h8" style={{ color: '#DEDEDE' }}>
+              <Typography variant="h8" style={{ color: '#DEDEDE' }} onClick={register}>
                 Create account
               </Typography>
             </Button>
