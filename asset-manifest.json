@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/MediReminder/static/css/main.37039ec1.chunk.css",
-    "main.js": "/MediReminder/static/js/main.6420a447.chunk.js",
-    "main.js.map": "/MediReminder/static/js/main.6420a447.chunk.js.map",
+    "main.js": "/MediReminder/static/js/main.4a27a830.chunk.js",
+    "main.js.map": "/MediReminder/static/js/main.4a27a830.chunk.js.map",
     "runtime-main.js": "/MediReminder/static/js/runtime-main.3aa1cc8a.js",
     "runtime-main.js.map": "/MediReminder/static/js/runtime-main.3aa1cc8a.js.map",
     "static/css/2.9aaf2cf1.chunk.css": "/MediReminder/static/css/2.9aaf2cf1.chunk.css",
-    "static/js/2.e0d0cc5e.chunk.js": "/MediReminder/static/js/2.e0d0cc5e.chunk.js",
-    "static/js/2.e0d0cc5e.chunk.js.map": "/MediReminder/static/js/2.e0d0cc5e.chunk.js.map",
+    "static/js/2.19eab17d.chunk.js": "/MediReminder/static/js/2.19eab17d.chunk.js",
+    "static/js/2.19eab17d.chunk.js.map": "/MediReminder/static/js/2.19eab17d.chunk.js.map",
     "index.html": "/MediReminder/index.html",
     "static/css/2.9aaf2cf1.chunk.css.map": "/MediReminder/static/css/2.9aaf2cf1.chunk.css.map",
     "static/css/main.37039ec1.chunk.css.map": "/MediReminder/static/css/main.37039ec1.chunk.css.map",
-    "static/js/2.e0d0cc5e.chunk.js.LICENSE.txt": "/MediReminder/static/js/2.e0d0cc5e.chunk.js.LICENSE.txt"
+    "static/js/2.19eab17d.chunk.js.LICENSE.txt": "/MediReminder/static/js/2.19eab17d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3aa1cc8a.js",
     "static/css/2.9aaf2cf1.chunk.css",
-    "static/js/2.e0d0cc5e.chunk.js",
+    "static/js/2.19eab17d.chunk.js",
     "static/css/main.37039ec1.chunk.css",
-    "static/js/main.6420a447.chunk.js"
+    "static/js/main.4a27a830.chunk.js"
   ]
 }
