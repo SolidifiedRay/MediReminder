@@ -17,7 +17,9 @@ const DnDCalendar = withDragAndDrop(Calendar);
 
 const BusinessHour = (props) => {
 
-  const [businessHour, setEvents] = useState([])
+  const [businessHour, setEvents] = useState([
+  ])
+  console.log(businessHour)
 //   useEffect( () => {
    
 //     const loadData = async () => {
@@ -64,8 +66,8 @@ const BusinessHour = (props) => {
 
   const handleSelect = ({start, end}) => {
     // handleOpen(true)
-    const title = window.prompt('Max Capacity')
-    const capacity =  "Capcity:".concat(title)
+    const title = window.prompt('Reminder Name')
+    const capacity =  "Please ".concat(title)
     if(title) {
       setEvents([...businessHour, {
         id: uuidv4(),
@@ -82,7 +84,7 @@ const BusinessHour = (props) => {
 
   return  <Grid container>
             <Grid item xs={2}>
-                <Modal open={open} setOpen={setOpen} />
+                <Modal open={open} setOpen={setOpen} create={setEvents} />
                 <Grid container>
                     <Grid xs={12} onClick={()=>{handleOpen()}} style={{"backgroundColor": "#549CDF", textAlign: "center", paddingTop: 30, paddingBottom: 30, margin: 10, cursor: "pointer"}}>
                         <AddIcon style={{background: "white", borderRadius: "50%", color: "#549CDF", fontSize: 50}}/>
@@ -90,9 +92,9 @@ const BusinessHour = (props) => {
                             Create Reminder
                         </div>
                     </Grid>
-                    <Grid xs={12} style={{"backgroundColor": "#DEDEDE", textAlign: "center", paddingTop: 30, paddingBottom: 30, margin: 10}}>
+                    <Grid xs={12} style={{"backgroundColor": "#DEDEDE", color: "#549CDF", textAlign: "center", paddingTop: 30, paddingBottom: 30, margin: 10}}>
                         <SearchIcon style={{borderRadius: "50%", color: "#549CDF", fontSize: 50}}/>
-                        <div style={{color: "white", fontSize: 30, marginTop: 20}}>
+                        <div style={{color: "white", fontSize: 30, marginTop: 20, color:  "#549CDF"}}>
                             Search
                         </div>
                     </Grid>
