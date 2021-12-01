@@ -10,30 +10,22 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 export default function FolderList() {
   return (
-    <List style={{height: 300, overflow: "scroll"}}>
-      <ListItem style={{textAlign: "center", "display": "block"}}>
-          <BeachAccessIcon />
-          <div>
-              connect1 
-            </div>
+    <List style={{ height: 300, overflow: 'scroll' }}>
+      <ListItem style={{ textAlign: 'center', display: 'block' }}>
+        <BeachAccessIcon />
+        <div>connect1</div>
       </ListItem>
-      <ListItem style={{textAlign: "center", "display": "block"}}>
-          <BeachAccessIcon />
-          <div>
-              connect2
-            </div>
+      <ListItem style={{ textAlign: 'center', display: 'block' }}>
+        <BeachAccessIcon />
+        <div>connect2</div>
       </ListItem>
-      <ListItem style={{textAlign: "center", "display": "block"}}>
-          <BeachAccessIcon />
-          <div>
-              connect3
-            </div>
+      <ListItem style={{ textAlign: 'center', display: 'block' }}>
+        <BeachAccessIcon />
+        <div>connect3</div>
       </ListItem>
-      <ListItem style={{textAlign: "center", "display": "block"}}>
-          <BeachAccessIcon />
-          <div>
-              connect3
-            </div>
+      <ListItem style={{ textAlign: 'center', display: 'block' }}>
+        <BeachAccessIcon />
+        <div>connect3</div>
       </ListItem>
     </List>
   );

@@ -15,11 +15,15 @@ function App() {
     password: 'yc3346',
   };
 
-  const [user, setUser] = useState({ username: '', email: '', password: '' });
+  const [user, setUser] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
   let navigate = useNavigate();
 
   const LoginFunc = (details) => {
-    setUser(adminUser);
+    setUser({ ...user, username: 'Ray', email: details.email });
     navigate('/account');
   };
 

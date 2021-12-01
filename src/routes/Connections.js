@@ -62,6 +62,40 @@ function Home() {
     setOpenAddNewConnection(false);
   };
 
+  const dummy = [
+    {
+      id: '1',
+      name: 'Jack',
+      email: 'jack@gmail.com',
+      relationship: 'They remind you',
+    },
+    {
+      id: '2',
+      name: 'Tom',
+      email: 'tom@gmail.com',
+      relationship: 'You remind them',
+    },
+    {
+      id: '3',
+      name: 'Lucy',
+      email: 'lucy@gmail.com',
+      relationship: 'They remind you',
+    },
+  ];
+
+  const [connections, setConnections] = useState(dummy);
+  const [newConnection, setNewConnection] = useState({
+    id: '',
+    name: '',
+    email: '',
+    relationship: 'They remind you',
+  });
+
+  const deleteConnection = (id) => {
+    const newList = connections.filter((c) => c.id !== id);
+    setConnections(newList);
+  };
+
   return (
     <div>
       <br />
@@ -76,9 +110,15 @@ function Home() {
         </Typography>
       </Box>
       <br />
-      <Connection />
-      <Connection />
-      <Connection />
+      {connections.map((c) => (
+        <Connection
+          name={c.name}
+          email={c.email}
+          relationship={c.relationship}
+          id={c.id}
+          deleteConnection={deleteConnection}
+        />
+      ))}
       <br />
       <br />
       <Box display="flex" alignItems="center" justifyContent="center">
@@ -120,7 +160,12 @@ function Home() {
                 Connection Name:
               </Typography>
             </InputLabel>
-            <BootstrapInput id="password" />
+            <BootstrapInput
+              id="name"
+              onChange={(e) =>
+                setNewConnection({ ...newConnection, name: e.target.value })
+              }
+            />
           </FormControl>
           <br />
           <br />
@@ -130,7 +175,12 @@ function Home() {
                 Connection Email:
               </Typography>
             </InputLabel>
-            <BootstrapInput id="password" />
+            <BootstrapInput
+              id="email"
+              onChange={(e) =>
+                setNewConnection({ ...newConnection, email: e.target.value })
+              }
+            />
           </FormControl>
           <br />
           <br />
@@ -187,6 +237,10 @@ function Home() {
                 width: '200px',
                 height: '50px',
                 borderRadius: '25px',
+              }}
+              onClick={() => {
+                setConnections([...connections, newConnection]);
+                setOpenAddNewConnection(false);
               }}
               disableElevation
             >

@@ -56,7 +56,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Connection() {
+function Connection({ name, email, relationship, id, deleteConnection }) {
   const [openDelete, setOpenDelete] = React.useState(false);
   const handleClickOpenDelete = () => {
     setOpenDelete(true);
@@ -72,6 +72,14 @@ function Connection() {
   const handleCloseSettings = () => {
     setOpenSettings(false);
   };
+
+  const [details, setDetails] = React.useState({
+    name: name,
+    email: email,
+    relationship: relationship,
+  });
+
+  const [editDetails, setEditDetails] = React.useState(details);
 
   return (
     <div>
@@ -90,14 +98,14 @@ function Connection() {
                   variant="h4"
                   style={{ color: '#549CDF' }}
                 >
-                  Connection Name
+                  {details.name}
                 </Typography>
                 <Typography
                   display="inline"
                   variant="h6"
                   style={{ color: '#8C8B8B' }}
                 >
-                  Connection email
+                  {details.email}
                 </Typography>
               </Stack>
             </Stack>
@@ -118,7 +126,7 @@ function Connection() {
                 style={{ color: '#8C8B8B' }}
                 align="center"
               >
-                They Remind you
+                {details.relationship}
               </Typography>
             </Box>
           </Grid>
@@ -199,7 +207,13 @@ function Connection() {
                 Connection Name:
               </Typography>
             </InputLabel>
-            <BootstrapInput id="password" />
+            <BootstrapInput
+              id="name"
+              onChange={(e) =>
+                setEditDetails({ ...editDetails, name: e.target.value })
+              }
+              value={editDetails.name}
+            />
           </FormControl>
           <br />
           <br />
@@ -209,7 +223,13 @@ function Connection() {
                 Connection Email:
               </Typography>
             </InputLabel>
-            <BootstrapInput id="password" />
+            <BootstrapInput
+              id="email"
+              onChange={(e) =>
+                setEditDetails({ ...editDetails, email: e.target.value })
+              }
+              value={editDetails.email}
+            />
           </FormControl>
           <br />
           <br />
@@ -231,7 +251,11 @@ function Connection() {
             </Typography>
           </InputLabel>
           <FormControl fullWidth>
-            <Select labelId="remiders-to-share" id="remiders-to-share">
+            <Select
+              labelId="remiders-to-share"
+              id="remiders-to-share"
+              defaultValue={'They Remind You'}
+            >
               <MenuItem value={1}>They Remind You</MenuItem>
               <MenuItem value={2}>You Remind them</MenuItem>
               <MenuItem value={3}>You Remind each other</MenuItem>
@@ -266,6 +290,10 @@ function Connection() {
                 width: '200px',
                 height: '50px',
                 borderRadius: '25px',
+              }}
+              onClick={() => {
+                setOpenSettings(false);
+                setDetails(editDetails);
               }}
               disableElevation
             >
@@ -311,6 +339,7 @@ function Connection() {
                       height: '40px',
                       borderRadius: '25px',
                     }}
+                    onClick={() => deleteConnection(id)}
                     disableElevation
                   >
                     <Typography variant="h5" style={{ color: '#E5E5E5' }}>
@@ -330,6 +359,7 @@ function Connection() {
                       height: '40px',
                       borderRadius: '25px',
                     }}
+                    onClick={() => setOpenDelete(false)}
                     disableElevation
                   >
                     <Typography variant="h5" style={{ color: '#549CDF' }}>
