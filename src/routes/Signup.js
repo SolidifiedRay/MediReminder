@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { useState } from 'react'
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import { alpha, styled } from '@mui/material/styles';
@@ -7,6 +7,10 @@ import InputBase from '@mui/material/InputBase';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
 
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -46,15 +50,15 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 
 function Signup() {
+  let navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [userName, setUsername] = useState('');
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-  const [userName, setUsername] = useState("")
+  const register = async () => {};
 
-  const register = async () => {
-    
-  }
+  const [openSignUpSuccess, setOpenSignUpSuccess] = useState(false);
 
   return (
     <div>
@@ -135,7 +139,11 @@ function Signup() {
               }}
               disableElevation
             >
-              <Typography variant="h8" style={{ color: '#DEDEDE' }} onClick={register}>
+              <Typography
+                variant="h8"
+                style={{ color: '#DEDEDE' }}
+                onClick={() => setOpenSignUpSuccess(true)}
+              >
                 Create account
               </Typography>
             </Button>
@@ -144,6 +152,43 @@ function Signup() {
       </Box>
       <br />
       <br />
+
+      <Dialog
+        open={openSignUpSuccess}
+        onClose={() => setOpenSignUpSuccess(false)}
+      >
+        <DialogTitle style={{ width: '500px' }}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Typography
+              display="inline"
+              variant="h6"
+              style={{ color: '#549CDF' }}
+            >
+              Thanks! Your account has been successfully created.
+            </Typography>
+          </Box>
+        </DialogTitle>
+        <DialogContent style={{ width: '500px' }}>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: '#549CDF',
+                textTransform: 'none',
+                width: '200px',
+                height: '40px',
+                borderRadius: '25px',
+              }}
+              onClick={() => {
+                navigate('/login');
+              }}
+              disableElevation
+            >
+              <Typography variant="h6">OK</Typography>
+            </Button>
+          </Box>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

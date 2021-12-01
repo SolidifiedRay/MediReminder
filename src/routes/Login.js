@@ -54,7 +54,6 @@ function Login({ LoginFunc }) {
     e.preventDefault();
 
     LoginFunc(details);
-    console.log(details);
   };
 
   return (

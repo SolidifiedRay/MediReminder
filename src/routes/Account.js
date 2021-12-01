@@ -59,19 +59,61 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const BootstrapInputSmall = styled(InputBase)(({ theme }) => ({
+  'label + &': {
+    marginTop: theme.spacing(3),
+  },
+  '& .MuiInputBase-input': {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.mode === 'light' ? '#fcfcfb' : '#2b2b2b',
+    border: '1px solid #ced4da',
+    fontSize: 16,
+    width: '200px',
+    padding: '10px 12px',
+    transition: theme.transitions.create([
+      'border-color',
+      'background-color',
+      'box-shadow',
+    ]),
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
+      borderColor: theme.palette.primary.main,
+    },
+  },
+}));
+
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
   border: `2px solid ${theme.palette.background.paper}`,
 }));
 
-function Account({ LogoutFunc }) {
+function Account({ LogoutFunc, user }) {
+  const [editUsername, setEditUsername] = React.useState(false);
+  const [editEmail, setEditEmail] = React.useState(false);
+  const [editPassword, setEditPassword] = React.useState(false);
   const [openName, setOpenName] = React.useState(false);
+
   const handleClickOpenName = () => {
     setOpenName(true);
   };
   const handleCloseName = () => {
     setOpenName(false);
+    setEditUsername(false);
   };
 
   const [openEmail, setOpenEmail] = React.useState(false);
@@ -80,6 +122,7 @@ function Account({ LogoutFunc }) {
   };
   const handleCloseEmail = () => {
     setOpenEmail(false);
+    setEditEmail(false);
   };
 
   const [openPassword, setOpenPassword] = React.useState(false);
@@ -88,6 +131,7 @@ function Account({ LogoutFunc }) {
   };
   const handleClosePassword = () => {
     setOpenPassword(false);
+    setEditPassword(false);
   };
 
   const [openMedicationList, setOpenMedicationList] = React.useState(false);
@@ -111,11 +155,11 @@ function Account({ LogoutFunc }) {
   }
 
   const rows = [
-    createData('Medication Name', 'dosage'),
-    createData('Medication Name', 'dosage'),
-    createData('Medication Name', 'dosage'),
-    createData('Medication Name', 'dosage'),
-    createData('Medication Name', 'dosage'),
+    createData('aspirin', '1 daily'),
+    createData('carvedilol', '1 twice daily'),
+    createData('citalopram', '1 daily'),
+    createData('metformin', '1 twice daily'),
+    createData('zolpidem', '1 at bedtime'),
   ];
 
   return (
@@ -149,7 +193,7 @@ function Account({ LogoutFunc }) {
           Hello,&nbsp;
         </Typography>
         <Typography display="inline" variant="h4" style={{ color: '#549CDF' }}>
-          Username.
+          {user.username}.
         </Typography>
       </Box>
       <br />
@@ -186,7 +230,7 @@ function Account({ LogoutFunc }) {
                     variant="h6"
                     style={{ color: '#549CDF' }}
                   >
-                    Username
+                    {user.username}
                   </Typography>
                 </Stack>
               </Button>
@@ -221,7 +265,7 @@ function Account({ LogoutFunc }) {
                     variant="h6"
                     style={{ color: '#549CDF' }}
                   >
-                    Email@website.com
+                    {user.email}
                   </Typography>
                 </Stack>
               </Button>
@@ -392,7 +436,15 @@ function Account({ LogoutFunc }) {
                     variant="h6"
                     style={{ color: '#549CDF' }}
                   >
-                    Username
+                    {editUsername ? (
+                      <BootstrapInputSmall
+                        id="username"
+                        value={user.username}
+                        width="200px"
+                      />
+                    ) : (
+                      user.username
+                    )}
                   </Typography>
                 </Stack>
               </Grid>
@@ -408,6 +460,7 @@ function Account({ LogoutFunc }) {
                       height: '40px',
                       borderRadius: '25px',
                     }}
+                    onClick={() => setEditUsername(true)}
                     disableElevation
                   >
                     <Typography variant="h6">Change username</Typography>
@@ -485,7 +538,15 @@ function Account({ LogoutFunc }) {
                     variant="h6"
                     style={{ color: '#549CDF' }}
                   >
-                    email@website.com
+                    {editEmail ? (
+                      <BootstrapInputSmall
+                        id="email"
+                        value={user.email}
+                        width="200px"
+                      />
+                    ) : (
+                      user.email
+                    )}
                   </Typography>
                 </Stack>
               </Grid>
@@ -501,6 +562,7 @@ function Account({ LogoutFunc }) {
                       height: '40px',
                       borderRadius: '25px',
                     }}
+                    onClick={() => setEditEmail(true)}
                     disableElevation
                   >
                     <Typography variant="h6">Change Email</Typography>
@@ -541,7 +603,21 @@ function Account({ LogoutFunc }) {
                     variant="h6"
                     style={{ color: '#549CDF' }}
                   >
-                    *********
+                    {editPassword ? (
+                      <div>
+                        <BootstrapInputSmall id="password" width="200px" />
+                        <Typography
+                          display="inline"
+                          variant="h6"
+                          style={{ color: '#000000' }}
+                        >
+                          Re-enter Password
+                        </Typography>
+                        <BootstrapInputSmall id="password" width="200px" />
+                      </div>
+                    ) : (
+                      '*******'
+                    )}
                   </Typography>
                 </Stack>
               </Grid>
@@ -557,6 +633,7 @@ function Account({ LogoutFunc }) {
                       height: '40px',
                       borderRadius: '25px',
                     }}
+                    onClick={() => setEditPassword(true)}
                     disableElevation
                   >
                     <Typography variant="h6">Change Password</Typography>

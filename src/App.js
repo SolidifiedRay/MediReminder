@@ -5,21 +5,22 @@ import Home from './routes/Home';
 import Login from './routes/Login';
 import Signup from './routes/Signup';
 import Account from './routes/Account';
-import Reminder from './routes/Reminder'
+import Reminder from './routes/Reminder';
 import Connections from './routes/Connections';
 
 function App() {
   const adminUser = {
-    email: 'admin@admin.com',
-    password: 'admin',
+    email: 'yc3346@nyu.com',
+    username: 'Ray',
+    password: 'yc3346',
   };
 
-  const [user, setUser] = useState({ username: '', email: '' });
+  const [user, setUser] = useState({ username: '', email: '', password: '' });
   let navigate = useNavigate();
 
   const LoginFunc = (details) => {
-      setUser({ username: details.email, email: details.email });
-      navigate('/account');
+    setUser(adminUser);
+    navigate('/account');
   };
 
   const LogoutFunc = () => {
@@ -39,7 +40,7 @@ function App() {
         <Route
           exact
           path="account"
-          element={<Account LogoutFunc={LogoutFunc} />}
+          element={<Account user={user} LogoutFunc={LogoutFunc} />}
         />
         <Route exact path="connections" element={<Connections />} />
       </Routes>
